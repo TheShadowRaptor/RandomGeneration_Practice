@@ -48,6 +48,9 @@ public class MapGenerator : MonoBehaviour
         {
             SmoothMap();
         }
+
+        MeshGenerator meshGenerater = GetComponent<MeshGenerator>();
+        meshGenerater.GenerateMesh(map, 1);
     }
 
     void RandomFillMap()
@@ -127,27 +130,27 @@ public class MapGenerator : MonoBehaviour
         return wallCount;
     }
 
-    private void OnDrawGizmos()
-    {
-        //Draws gizmo using random map generation
-        if (map != null)
-        {
-            // For each tile
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    //Colors (Wall) Black, (Floor) White
-                    Gizmos.color = (map[x, y] == 1) ? Color.black : Color.white;
-                    //Gizmo Posiiton
-                    Vector3 pos = new Vector3(-width / 2 + x + 0.5f, 0, -height / 2 + y + 0.5f);
+//    private void OnDrawGizmos()
+//    {
+//        Draws gizmo using random map generation
+//        if (map != null)
+//        {
+//            For each tile
+//            for (int x = 0; x < width; x++)
+//            {
+//                for (int y = 0; y < height; y++)
+//                {
+//                    Colors(Wall) Black, (Floor)White
+//                    Gizmos.color = (map[x, y] == 1) ? Color.black : Color.white;
+//                    Gizmo Posiiton
+//                    Vector3 pos = new Vector3(-width / 2 + x + 0.5f, 0, -height / 2 + y + 0.5f);
 
-                    // The Gizmo
-                    Gizmos.DrawCube(pos, Vector3.one);
-                }
-            }
-        }
-    }
+//                    The Gizmo
+//                    Gizmos.DrawCube(pos, Vector3.one);
+//                }
+//            }
+//        }
+//    }
 }
 
 
