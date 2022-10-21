@@ -419,11 +419,11 @@ MonoBehaviour:
   caveShapeNum: 5
   width: 128
   height: 72
-  seed: 0
+  seed: 2
   useRandomSeed: 0
-  randomFillPercent: 56
-  _wallThreshHoldSize: 50
-  _roomThreshHoldSize: 50
+  randomFillPercent: 52
+  _wallThreshHoldSize: 52
+  _roomThreshHoldSize: 100
 --- !u!4 &1405781314
 Transform:
   m_ObjectHideFlags: 0
