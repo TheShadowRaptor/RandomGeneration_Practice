@@ -62,13 +62,20 @@ public class MeshGenerator : MonoBehaviour
         }
         mesh.uv = uvs;
 
+
         if (is2D)
         {
             Generate2DColliders();
         }
+
         else
         {
             CreateWallMesh();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !is2D)
+        {
+            RemovePreviousWallMesh();
         }
     }
 
@@ -105,6 +112,12 @@ public class MeshGenerator : MonoBehaviour
 
         MeshCollider wallCollider = walls.gameObject.AddComponent<MeshCollider>();
         wallCollider.sharedMesh = wallMesh;
+    }
+
+    void RemovePreviousWallMesh()
+    {
+        MeshCollider wallCollider = walls.gameObject.GetComponent<MeshCollider>();
+        wallCollider.sharedMesh = null;
     }
 
     void Generate2DColliders()
