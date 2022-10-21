@@ -424,6 +424,7 @@ MonoBehaviour:
   randomFillPercent: 52
   _wallThreshHoldSize: 52
   _roomThreshHoldSize: 100
+  passageSize: 2
 --- !u!4 &1405781314
 Transform:
   m_ObjectHideFlags: 0
